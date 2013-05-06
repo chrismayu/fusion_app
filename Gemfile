@@ -35,7 +35,15 @@ gem "better_errors", ">= 0.6.0", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "heroku"
-
+gem "letter_opener", :group => :development
+gem 'redcarpet'
+gem "strongbox"
+gem "nifty-generators", :group => :development
+gem 'fog'
+gem 'wicked'
+gem 'going_postal'
+gem "validate_url"
+gem 'validates_formatting_of'
 
 group :test do
   gem "guard-rspec"
