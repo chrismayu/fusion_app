@@ -11,24 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506021344) do
-
-  create_table "attendances", :force => true do |t|
-    t.integer  "youth_id"
-    t.integer  "course_id"
-    t.date     "attendance_date"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  create_table "courses", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "length"
-    t.string   "instructor"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130506020754) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -66,17 +49,5 @@ ActiveRecord::Schema.define(:version => 20130506021344) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
-
-  create_table "youths", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "phone_number"
-    t.string   "email",        :default => "", :null => false
-    t.date     "birthday"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-  end
-
-  add_index "youths", ["email"], :name => "index_youths_on_email", :unique => true
 
 end
