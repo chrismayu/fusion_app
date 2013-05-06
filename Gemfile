@@ -44,6 +44,13 @@ gem 'wicked'
 gem 'going_postal'
 gem "validate_url"
 gem 'validates_formatting_of'
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim', ">= 1.3.8"
+gem 'resque'
+gem 'exception_notification'
+gem 'brakeman', group: :development
+gem 'to_xls'
 
 group :test do
   gem "guard-rspec"
