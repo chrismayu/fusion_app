@@ -1,8 +1,17 @@
 FusionApp::Application.routes.draw do
+  resources :attendances
+
+
+  resources :youths
+
+
+  resources :courses
+
+  root :to => "attendances#index"
   authenticated :user do
-    root :to => 'home#index'
+    root :to => "attendances#index"
   end
-  root :to => "home#index"
+ 
   devise_for :users
   resources :users
 end
