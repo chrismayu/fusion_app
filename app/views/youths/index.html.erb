@@ -1,0 +1,29 @@
+<h1>Listing youths</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Phone number</th>
+    <th>Birthday</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @youths.each do |youth| %>
+  <tr>
+    <td><%= youth.first_name %></td>
+    <td><%= youth.last_name %></td>
+    <td><%= youth.phone_number %></td>
+    <td><%= youth.birthday %></td>
+    <td><%= link_to 'Show', youth %></td>
+    <td><%= link_to 'Edit', edit_youth_path(youth) %></td>
+    <td><%= link_to 'Destroy', youth, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Youth', new_youth_path %>
