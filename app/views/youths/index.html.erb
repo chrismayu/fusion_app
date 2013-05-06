@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @youths.each do |youth| %>  
+    <% @youths.each do |youth| %>    
       <tr>
         <td><%= link_to youth.id, youth_path(youth) %></td>
         <td><%= youth.first_name %></td>
