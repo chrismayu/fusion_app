@@ -1,13 +1,10 @@
-<%= simple_form_for(@attendance) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :youth_id %>
-    <%= f.input :course_id %>
-    <%= f.input :attendance_date %>
-  </div>
-
+<%= simple_form_for @attendance, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :youth_id %>
+  <%= f.input :course_id %>
+  <%= f.input :attendance_date %>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                attendances_path, :class => 'btn' %>
   </div>
 <% end %>

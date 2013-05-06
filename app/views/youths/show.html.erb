@@ -1,25 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Youth -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>First name:</b>
-  <%= @youth.first_name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dd><%= @youth.first_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dd><%= @youth.last_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
+  <dd><%= @youth.phone_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @youth.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:birthday) %>:</strong></dt>
+  <dd><%= @youth.birthday %></dd>
+</dl>
 
-<p>
-  <b>Last name:</b>
-  <%= @youth.last_name %>
-</p>
-
-<p>
-  <b>Phone number:</b>
-  <%= @youth.phone_number %>
-</p>
-
-<p>
-  <b>Birthday:</b>
-  <%= @youth.birthday %>
-</p>
-
-
-<%= link_to 'Edit', edit_youth_path(@youth) %> |
-<%= link_to 'Back', youths_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              youths_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_youth_path(@youth), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              youth_path(@youth),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
