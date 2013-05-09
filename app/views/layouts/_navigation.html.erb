@@ -1,6 +1,22 @@
 <%= link_to "Fusion App", root_path, :class => 'brand' %>
-<ul class="nav">
-  <% if user_signed_in? %>
+<ul class="nav pull-right">
+
+ <% if user_signed_in? %>
+    <li>
+    <%= link_to 'New Record', new_attendance_path %>
+    </li>
+ <li>
+    <%= link_to 'All Records', attendances_path %>
+    </li>
+
+	<li>
+    <%= link_to 'Youth', youths_path %>
+    </li>
+ <li>
+    <%= link_to 'Courses', courses_path  %>
+    </li>
+	
+ 
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
     </li>
@@ -19,8 +35,6 @@
       </li>
     <% end %>
   <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
+
   <% end %>
 </ul>

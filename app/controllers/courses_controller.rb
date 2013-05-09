@@ -1,6 +1,9 @@
 class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
+  
+   before_filter :authenticate_user! 
+   
   def index
     @courses = Course.all
 

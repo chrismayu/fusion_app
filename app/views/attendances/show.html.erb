@@ -5,9 +5,20 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:youth_id) %>:</strong></dt>
-  <dd><%= @attendance.youth_id %></dd>
+  <dd> 
+	
+	<% for youth in @attendance.youths %>
+      <td><%= youth.first_name %> <%= youth.last_name %></td>
+           <% end %>	
+	</dd>
   <dt><strong><%= model_class.human_attribute_name(:course_id) %>:</strong></dt>
-  <dd><%= @attendance.course_id %></dd>
+  <dd> 
+	
+	 <% for course in @attendance.courses %>
+           <%= course.title %>   
+            <% end %>
+	
+	</dd>
   <dt><strong><%= model_class.human_attribute_name(:attendance_date) %>:</strong></dt>
   <dd><%= @attendance.attendance_date %></dd>
 </dl>

@@ -1,6 +1,12 @@
 class AttendancesController < ApplicationController
   # GET /attendances
   # GET /attendances.json
+   before_filter :authenticate_user!, :except => [:welcome]
+  def welcome
+    
+    
+  end
+  
   def index
     @attendances = Attendance.all
 

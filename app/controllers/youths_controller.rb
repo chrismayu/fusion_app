@@ -1,6 +1,9 @@
 class YouthsController < ApplicationController
   # GET /youths
   # GET /youths.json
+  
+   before_filter :authenticate_user!
+   
   def index
     @youths = Youth.all
 

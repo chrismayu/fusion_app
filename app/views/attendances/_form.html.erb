@@ -1,7 +1,24 @@
 <%= simple_form_for @attendance, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :youth_id %>
-  <%= f.input :course_id %>
-  <%= f.input :attendance_date %>
+
+ 
+  
+	<%= f.input :attendance_date, :label=>"Date:", :wrapper => :append do %>
+	  <%= f.input_field :attendance_date, :id=> 'attendance',   :as => :string %><span class="add-on"><i class="icon-calendar"></i></span>
+	<% end %>
+
+
+	<%= f.input :youth_id, :label=>"Youth:",  :wrapper => :append do %>
+	  <%= f.collection_select(:youth_id,  Youth.all, :id, :first_name,  { :prompt => 'Select Youth' } ) %> 
+<% end %>
+
+	<%= f.input :course_id, :label=>"Course:",  :wrapper => :append do %>
+	 <%= f.collection_select :course_id, Course.all, :id, :title,  { :prompt => 'Select Course' }  %> 
+ <% end %>
+
+
+
+
+
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
