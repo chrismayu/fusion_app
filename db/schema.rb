@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506184717) do
+ActiveRecord::Schema.define(:version => 20130509205509) do
 
   create_table "attendances", :force => true do |t|
     t.integer  "youth_id"
@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(:version => 20130506184717) do
     t.text     "description"
     t.string   "length"
     t.string   "instructor"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "instructor_first_name"
+    t.string   "instructor_last_name"
   end
 
   create_table "roles", :force => true do |t|
@@ -71,10 +73,12 @@ ActiveRecord::Schema.define(:version => 20130506184717) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "phone_number"
-    t.string   "email",        :default => "", :null => false
+    t.string   "email",                 :default => "", :null => false
     t.date     "birthday"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.string   "instructor_first_name"
+    t.string   "instructor_last_name"
   end
 
   add_index "youths", ["email"], :name => "index_youths_on_email", :unique => true

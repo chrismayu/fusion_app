@@ -4,4 +4,8 @@ class Attendance < ActiveRecord::Base
   has_many :youths, :primary_key => "youth_id", :foreign_key => "id"
 
 
+  validates :course_id, :presence => true
+  validates :youth_id, :presence => true
+    validates :attendance_date, :presence => true
+
 end

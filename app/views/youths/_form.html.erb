@@ -3,7 +3,11 @@
   <%= f.input :last_name %>
   <%= f.input :phone_number %>
   <%= f.input :email %>
-  <%= f.input :birthday %>
+
+	<%= f.input :birthday, :label=>"Birthday:", :placeholder=>"Click Here to add their Birthday", :wrapper => :append do %>
+	  <%= f.input_field :birthday, :id=> 'birthday',   :as => :string %><span class="add-on"><i class="icon-calendar"></i></span>
+	<% end %>
+
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
