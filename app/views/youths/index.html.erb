@@ -5,26 +5,26 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+     
       <th><%= model_class.human_attribute_name(:first_name) %></th>
       <th><%= model_class.human_attribute_name(:last_name) %></th>
       <th><%= model_class.human_attribute_name(:phone_number) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:birthday) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Age:</th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @youths.each do |youth| %>
       <tr>
-        <td><%= link_to youth.id, youth_path(youth) %></td>
+   
         <td><%= youth.first_name %></td>
         <td><%= youth.last_name %></td>
         <td><%= youth.phone_number %></td>
         <td><%= youth.email %></td>
-        <td><%= youth.birthday %></td>
-        <td><%=l youth.created_at %></td>
+        <td><%= time_ago_in_words(youth.birthday) %></td>
+  
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_youth_path(youth), :class => 'btn btn-mini' %>

@@ -2,4 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+    datetime:
+      distance_in_words:
+        about_x_years:
+          one: "1 hour"
+          other: "%{count} years old"

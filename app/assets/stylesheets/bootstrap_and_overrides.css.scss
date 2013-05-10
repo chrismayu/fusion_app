@@ -1,3 +1,11 @@
 @import "bootstrap";
-body { padding-top: 60px; }
+body { padding-top: 70px; }
 @import "bootstrap-responsive";
+
+
+.btn-custom { background-color: hsl(25, 100%, 40%) !important; background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff8228", endColorstr="#cc5500"); background-image: -khtml-gradient(linear, left top, left bottom, from(#ff8228), to(#cc5500)); background-image: -moz-linear-gradient(top, #ff8228, #cc5500); background-image: -ms-linear-gradient(top, #ff8228, #cc5500); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff8228), color-stop(100%, #cc5500)); background-image: -webkit-linear-gradient(top, #ff8228, #cc5500); background-image: -o-linear-gradient(top, #ff8228, #cc5500); background-image: linear-gradient(#ff8228, #cc5500); border-color: #cc5500 #cc5500 hsl(25, 100%, 35.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.29); -webkit-font-smoothing: antialiased; }
+
+.spacer {
+    margin-right: 5px; /* define margin as you see fit */
+}
+

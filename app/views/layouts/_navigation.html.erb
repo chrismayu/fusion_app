@@ -1,40 +1,67 @@
-<%= link_to "Fusion App", root_path, :class => 'brand' %>
+
+<div class="masthead">
+	<br>
+	   <%= link_to image_tag("logo.png"), root_path, :class=>' nav pull-left'%>	
+
+
+
+
 <ul class="nav pull-right">
 
  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'New Record', new_attendance_path %>
-    </li>
+  
  <li>
-    <%= link_to 'All Records', attendances_path %>
+		<%= link_to attendances_path, :class => 'btn btn-custom spacer' do %>
+		Attendance <i class="icon-plus-sign"></i>
+		<% end %>&nbsp; &nbsp;
     </li>
 
-	<li>
-    <%= link_to 'Youth', youths_path %>
+<li>
+
+		<%= link_to youths_path, :class => 'btn btn-custom  spacer' do %>
+		Youth <i class="icon-user"></i>
+		<% end %>
+
     </li>
+
  <li>
-    <%= link_to 'Courses', courses_path  %>
+		<%= link_to courses_path, :class => 'btn btn-custom spacer' do %>
+		Programs <i class="icon-star"></i>
+		<% end %>
+		
     </li>
-	
+
  
     <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
+  
+
+		<%= link_to destroy_user_session_path, :method=>'delete', :class => 'btn btn-custom spacer' do %>
+		Logout 
+		<% end %>
+
     </li>
   <% else %>
     <li>
-    <%= link_to 'Login', new_user_session_path %>
+	<%= link_to new_user_session_path, :class => 'btn btn-custom spacer' do %>
+	Login 
+	<% end %>
     </li>
   <% end %>
   <% if user_signed_in? %>
     <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
+
+	<%= link_to edit_user_registration_path, :class => 'btn btn-custom spacer' do %>
+	Edit account
+	<% end %>
+
     </li>
     <% if current_user.has_role? :admin %>
       <li>
-      <%= link_to 'Admin', users_path %>
+      <%= link_to 'Admin', users_path,  :class => 'btn btn-custom spacer'%>
       </li>
     <% end %>
   <% else %>
 
   <% end %>
 </ul>
+</div>
